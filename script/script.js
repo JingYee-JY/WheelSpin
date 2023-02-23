@@ -1,7 +1,6 @@
 const play = document.getElementById("play");
 const start = document.getElementById("start");
 const levelButtons = document.querySelectorAll(".levelButton");
-const stopButton =  document.getElementById("stop")
 const again = document.getElementById("again");
 const home = document.getElementById("home");
 
@@ -31,12 +30,12 @@ const words1 = document.getElementById("words1")
 const words2 = document.getElementById("words2")
 const scoreText = document.getElementById("scoreText")
 
-let colors = [{name:"Blue", color:"blue"},
-              {name:"Red", color:"red"},
-              {name:"Green", color:"green"},
-              {name:"Yellow", color:"yellow"},
-              {name:"Pink", color:"pink"},
-              {name:"Purple", color:"purple"}]
+let colors = [{name:"Blue", color:"#08AEAD"},
+              {name:"Red", color:"#F25528"},
+              {name:"Green", color:"#8CC63F"},
+              {name:"Yellow", color:"#FBCE59"},
+              {name:"Pink", color:"#F90169"},
+              {name:"Purple", color:"#8928CD"}]
 
 let tempoSetting = {};
 
@@ -64,11 +63,12 @@ let rotationInterval
 
 //100 rotations for animation and last rotation for result
 let speed = 2
-//start spinning
-stopButton.addEventListener("click", () => {
-    stopButton.disabled = true;
-    playerStop = true;
-})
+//stop spinning
+function Stop(){
+    if(!playerStop){
+        playerStop = true;
+    }
+}
 
 let current;
 let addscore = 1
@@ -171,7 +171,9 @@ function Question(){
     answer.color = pieColor[correctIndex]
     
     console.log(pieColor)
-    colorAnswer.innerHTML = `<p>${answer.answer}</p>`
+    colorAnswer.innerHTML = `<p>Find</p>  
+                            <p style="color:${answer.color}">${answer.answer}</p>
+                            <p>color</p>`
 
     //change the size of the color on the chart
     data = []
@@ -199,8 +201,7 @@ function Question(){
     canvas.classList.add("wheel")
     gameContainer.appendChild(canvas)
 
-    //reset to let user tap on button
-    stopButton.disabled = false
+    //reset to let user stop
     playerStop = false
 
     //create chart
@@ -216,6 +217,8 @@ function Question(){
                 {
                     backgroundColor: pieColor,
                     data:data,
+                    //hide outline
+                    borderWidth: 0,
                 },
             ],
         },
@@ -291,7 +294,7 @@ function checkColor(colorSelected){
     }
     else{
         mark.src = "./img/wrong.png"
-        checkAnswer.textContent = "Good try!"
+        checkAnswer.textContent = "So close!"
         showAnswer.classList.add("hide")
     }
     

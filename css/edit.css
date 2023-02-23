@@ -2,24 +2,49 @@
 
 /*Commonly Changed Items*/
 :root{
-    --backgroundColour:#D5EBF9;
-    --buttonBackgroundColor:#014598;
+    --backgroundColour:#244266;
+    --buttonBackgroundColor:#08AEAD;
     --buttonTextColor:white;
     --textDarkBlueColor:#014598;
+    --pointBackground: #08AEAD;
     --gameTopBackground: white;
-    --backgroundColour2:#014598;
+    --backgroundColour2:#244266;
+    --popUpBackground:rgba(36, 66, 102, 0.8);
     --scoreTextBackground:#FBCE59;
-    --borderColor2:#F25528;
+    --popUp:white;
+    --borderColor:#08AEAD;
+    --borderColor2:#08AEAD;
     --finalPopUpBackground:white;
+    --greyColor:#4B4B4B;
+}
+
+/*SelectionPage*/
+.choices, .instruction{
+    color: var(--textWhiteColor);
+}
+
+/*InstructionPage*/
+.details{
+    color: var(--textBlackColor);
 }
 
 /*GamePage*/
-.colorAnswer{
-    padding: 15px;
-    border-radius: 20px;
-    background-color: white;
-    font-size: 40px;
+.top{
+    color: var(--greyColor);    
 }
+
+.point{
+    color: var(--textWhiteColor);
+}
+
+.colorAnswer{
+    display: flex;
+    gap: 10px;
+    border-radius: 20px;
+    color: var(--textWhiteColor);
+    font-size: 45px;
+}
+
 .container{
     margin-top: 20px;
     display: flex;
@@ -40,10 +65,10 @@
 
 .arrow{
     position: absolute;
-    top: -15%;
-    transform: translate(50%, 50%);
-    right: 50%;
-    height: 15%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    height: 80%;
     width: auto;
 }
 

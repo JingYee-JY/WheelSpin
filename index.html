@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="css/edit.css"/>
     <link rel="stylesheet" 
     href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400;900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body ontouchstart="Stop()">
     <div class="startPage" id="startPage">
         <img class="title" src="./img/logo.png">
         <img class="preview" src="./img/visual.png">
@@ -45,7 +46,11 @@
             <p>How to play</p>
             <div class="details">
               <p>
-                Choose the correct answer from the option
+                Train your brain and test <br>
+                your speed with the Wheel <br>
+                Spin game. Watch out for <br>
+                 added colors as the <br>
+                 difficulty increases.
               </p>
             </div>
         </div>
@@ -68,9 +73,6 @@
             <!--Add game code here-->
             <div id="colorAnswer" class="colorAnswer"></div>
             <div class="container" id="gameContainer">
-                <div id="stop" class="stop button">
-                    <p>STOP</p>
-                </div>
                 <img class="arrow" src="./img/arrow.png" alt="arrow">
             </div>
         </div>

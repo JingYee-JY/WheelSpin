@@ -3,6 +3,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body{
     font-family: 'Londrina Solid', cursive;
 }
 
@@ -144,6 +147,7 @@ body{
     width: var(--fullsize);
     border-radius: 20px;
     font-size: 26px;
+    font-family: 'Roboto', sans-serif !important;
     padding: var(--topPadding);
     background-color: var(--instructionBackgroundColor);
 }
@@ -168,8 +172,16 @@ body{
 
 .score{
     display: flex;
+    width: 30%;
     padding: 0px;
     justify-content: flex-end;
+}
+
+.score-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .score-count,.point{
@@ -178,6 +190,10 @@ body{
 
 .point{
     border-radius: 10px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--pointBackground);
 }
 
@@ -340,7 +356,7 @@ if useing this change the first version css to this*/
 /*mobile*/
 @media screen and (max-width: 767px){
     .preview{
-        max-height: 300px;
+        max-height: 260px;
         width: auto;
     }
 }
